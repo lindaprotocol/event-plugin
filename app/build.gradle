@@ -1,6 +1,6 @@
 apply plugin: 'application'
 
-mainClassName = 'org.tron.eventplugin.app.PluginLauncher'
+mainClassName = 'org.linda.eventplugin.app.PluginLauncher'
 
 dependencies {
   implementation project(':api')

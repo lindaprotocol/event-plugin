@@ -1,10 +1,10 @@
-# Tron eventsubscribe plugin
+# Linda eventsubscribe plugin
 
-This is an implementation of Tron eventsubscribe model. 
+This is an implementation of Linda eventsubscribe model. 
 
-* **api** module defines IPluginEventListener, a protocol between Java-tron and event plugin. 
+* **api** module defines IPluginEventListener, a protocol between Java-linda and event plugin. 
 * **app** module is an example for loading plugin, developers could use it for debugging.
-* **kafkaplugin** module is the implementation for kafka, it implements IPluginEventListener, it receives events subscribed from Java-tron and relay events to kafka server. 
+* **kafkaplugin** module is the implementation for kafka, it implements IPluginEventListener, it receives events subscribed from Java-linda and relay events to kafka server. 
 * **mongodbplugin** mongodbplugin module is the implementation for mongodb. 
 ### Setup/Build
 
@@ -15,7 +15,7 @@ This is an implementation of Tron eventsubscribe model.
 * This will produce plugin zips, named `plugin-kafka-1.0.0.zip` and `plugin-mongodb-1.0.0.zip`, located in the `eventplugin/build/plugins/` directory.
 
 
-### Edit **config.conf** of Java-tron, add the following fileds:
+### Edit **config.conf** of Java-linda, add the following fileds:
 ```
 event.subscribe = {
     path = "" // absolute path of plugin
@@ -175,7 +175,7 @@ kafka-console-consumer.sh --zookeeper localhost:2181 --topic solidityevent
 kafka-console-consumer.sh --zookeeper localhost:2181 --topic soliditylog
 ```
 
-### Load plugin in Java-tron
+### Load plugin in Java-linda
 * add --es to command line, for example:
 ```
  java -jar FullNode.jar -c config.conf --es 
